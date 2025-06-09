@@ -1,0 +1,8 @@
+gradio>=3.50.0
+Pillow
+torch
+diffusers
+transformers
+accelerate
+bitsandbytes
+huggingface_hub
