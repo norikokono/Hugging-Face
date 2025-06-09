@@ -1,0 +1,194 @@
+/* Color Palette Variables */
+:root {
+    --primary-accent-color: #5a287d; /* Deep, energetic purple for main actions */
+    --primary-accent-hover: #4a206b; /* Darker purple for hover */
+    --secondary-button-color: #20c997; /* Greenish-cyan for secondary actions */
+    --secondary-button-hover: #17a2b8; /* A slightly darker shade for hover */
+    --light-background: #f8f9fa;
+    --medium-background: #e9ecef;
+    --teal-text: #158585;
+    --light-text: #6c757d;
+    --red-text: #dc3545;
+}
+
+/* General body styling */
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    background-color: var(--light-background);
+    color: var(--dark-text);
+}
+
+/* Main interface container */
+.gradio-container {
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Title styling */
+h1 {
+    color: var(--primary-accent-color); /* Uses the main purple accent */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.8em;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Description text */
+.gr-interface-description {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--light-text);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0 25px;
+}
+
+/* Specific styling for the bolded description sentence */
+.gr-interface-description strong {
+    font-size: 1.25em;
+    color: var(--primary-accent-color); /* Uses the main purple accent */
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Input/Output areas (each component box) */
+.gr-box {
+    border: 1px solid var(--medium-background);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+/* Base style for all Gradio buttons */
+/* Using !important frequently can make debugging harder, use it if necessary to override Gradio defaults. */
+.gr-button {
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 5px 10px !important;
+    font-size: 1.05em !important;
+    font-weight: 500 !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+.gr-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+}
+.gr-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow on click */
+}
+
+/* Style for primary buttons (default Gradio buttons often look like this) */
+.gr-button.primary { /* Gradio assigns a 'primary' class based on variant */
+    background-color: var(--primary-accent-color) !important;
+}
+.gr-button.primary:hover {
+    background-color: var(--primary-accent-hover) !important;
+}
+
+/* Style for secondary buttons */
+.gr-button.secondary { /* Gradio assigns a 'secondary' class based on variant */
+    background-color: var(--secondary-button-color) !important;
+}
+.gr-button.secondary:hover {
+    background-color: var(--secondary-button-hover) !important;
+}
+
+/* Textbox labels */
+.label {
+    font-weight: 600;
+    color: var(--dark-text);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1.05em;
+}
+
+/* Image output styling */
+.output_image { /* This class might need verification from Gradio's DOM */
+    border: 3px solid var(--primary-accent-color); /* Uses the main purple accent */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.output_image img {
+    border-radius: 8px;
+}
+/* Ensure the gr-image component itself also has a border if .output_image isn't always present */
+.gr-image {
+    border: 3px solid var(--primary-accent-color); /* Fallback or additional styling for the image container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Style for text areas (inputs and outputs) */
+textarea {
+    border-radius: 8px !important;
+    border: 1px solid var(--medium-background) !important;
+    padding: 12px !important;
+    font-size: 1em;
+}
+
+/* Ensure output textboxes have visible background and text color */
+.output_textbox textarea {
+    background-color: var(--light-background) !important;
+    color: var(--dark-text) !important;
+    min-height: 120px;
+    resize: vertical;
+    font-size: 1.05em;
+    line-height: 1.5;
+}
+
+/* Make example buttons look nicer and use a different color */
+/* This targets buttons specifically within the examples section */
+.gr-sample-textbox button {
+    background-color: var(--secondary-button-color) !important; /* Greenish-cyan for examples */
+    font-size: 0.9em !important; /* Slightly smaller for examples */
+    padding: 6px 12px !important; /* Adjusted padding for examples */
+    border-radius: 5px !important;
+    font-weight: normal !important;
+    box-shadow: none !important; /* Remove individual shadow from example buttons */
+}
+.gr-sample-textbox button:hover {
+    background-color: var(--secondary-button-hover) !important; /* Darker greenish-cyan on hover */
+    transform: translateY(-1px) !important; /* Subtle lift */
+    box-shadow: none !important;
+}
+
+/* Adjust overall layout for better spacing */
+.gradio-main { /* This is Gradio's main content area */
+    padding: 25px;
+}
+
+/* Styles for the flag button */
+.gr-button.flag {
+    background-color: var(--red-error) !important;
+    font-size: 0.95em !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    font-weight: normal !important;
+}
+.gr-button.flag:hover {
+    background-color: var(--red-error-hover) !important;
+    transform: translateY(-2px);
+}
+
+/* Adjust description styling for better readability */
+.gr-interface-description {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Add a little more spacing between sections */
+.gr-row {
+    margin-bottom: 30px;
+}
