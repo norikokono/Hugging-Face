@@ -1,8 +1,8 @@
-gradio>=3.50.0
+gradio
 Pillow
-torch
+torch # Ensure this is a CPU-only build if you strictly want to avoid GPU, though PyTorch typically installs both.
 diffusers
 transformers
-accelerate
-bitsandbytes
-huggingface_hub
+accelerate # Often needed for from_pretrained optimizations, even on CPU
+safetensors # For faster and safer model loading
+sentencepiece # For Gemma's tokenizer
