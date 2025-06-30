@@ -60,5 +60,10 @@ Ready to explore AI-generated comics? It's straightforward:
 
 ---
 
+## 🚀 Try the AI Comic Generator
+
+Check out the **AI Comic** space created for the Agents MCP Hackathon:
+
+[![AI Comic on Hugging Face](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-lg.svg)](https://huggingface.co/spaces/Agents-MCP-Hackathon/AI-Comic)
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
